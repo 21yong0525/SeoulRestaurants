@@ -1,5 +1,6 @@
 package com.yong.nyamnyamgood
 
+import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,7 +11,6 @@ class CustomAdapter(val storeList: MutableList<DataVOStore>?) : RecyclerView.Ada
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val binding = ItemListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        val mainActivity = parent.context as MainActivity
         val customViewHolder = CustomViewHolder(binding)
 
         customViewHolder.itemView.setOnClickListener {
@@ -39,7 +39,9 @@ class CustomAdapter(val storeList: MutableList<DataVOStore>?) : RecyclerView.Ada
         if (dataVOStore?.telNo != null) {
             binding.itemListStoreTel.text = dataVOStore.telNo.toString()
         }
-
+        binding.itemListStoreName.isSingleLine = true
+        binding.itemListStoreName.ellipsize = TextUtils.TruncateAt.MARQUEE
+        binding.itemListStoreName.isSelected = true
         when(dataVOStore?.star){
             0 -> binding.tvStar.setBackgroundResource(R.drawable.ic_star_outline_24)
             1 -> binding.tvStar.setBackgroundResource(R.drawable.ic_star_24)

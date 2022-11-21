@@ -31,11 +31,12 @@ android {
         jvmTarget = '1.8'
     }
     viewBinding {
-        enabled= true
+        enabled = true
     }
 }
 
 dependencies {
+    implementation 'com.airbnb.android:lottie:5.2.0'
     implementation 'com.android.databinding:viewbinding:4.0.1'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'

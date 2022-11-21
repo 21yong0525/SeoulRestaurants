@@ -5,11 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
+import android.view.WindowManager
 import com.yong.nyamnyamgood.databinding.DialogCustomIntentBinding
 
 class CustomDialog_intent(val context: Context) {
     companion object {
-        const val WIDTH = 700
         const val HEIGHT = 700
     }
 
@@ -18,7 +18,7 @@ class CustomDialog_intent(val context: Context) {
 
     fun showDialog(dataVOStore: DataVOStore, type: Int) {
         dialog.setContentView(binding.root)
-        dialog.window!!.setLayout(WIDTH, HEIGHT)
+        dialog.window!!.setLayout(WindowManager.LayoutParams.MATCH_PARENT, HEIGHT)
         dialog.setCanceledOnTouchOutside(false)
         dialog.setCanceledOnTouchOutside(false)
         dialog.setCancelable(false)

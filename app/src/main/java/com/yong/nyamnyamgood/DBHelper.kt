@@ -152,8 +152,7 @@ class DBHelper(context: Context, dbName: String, version: Int) :
     fun insertStore(dataVOStore: DataVOStore): Boolean {
         var flag = false
         val query = """
-            insert into storeTBL(language, storeName, address, telNo, url, useTime, subwayInfo, reprsntMenu, star)
-            values('${dataVOStore.language}','${dataVOStore.storeName}','${dataVOStore.address}','${dataVOStore.telNo}',
+            insert into storeTBL values('${dataVOStore.language}','${dataVOStore.storeName}','${dataVOStore.address}','${dataVOStore.telNo}',
                     '${dataVOStore.url}','${dataVOStore.useTime}', '${dataVOStore.subwayInfo}', '${dataVOStore.reprsntMenu}', ${dataVOStore.star})
         """.trimIndent()
         val db = this.writableDatabase
@@ -188,7 +187,7 @@ class DBHelper(context: Context, dbName: String, version: Int) :
         return flag
     }
 
-    // 별표준 음식점만 보이기
+    // 별표 준 음식점만 보이기
     fun selectStar(language: String): MutableList<DataVOStore>? {
         var storeList: MutableList<DataVOStore>? = mutableListOf<DataVOStore>()
         var cursor: Cursor? = null

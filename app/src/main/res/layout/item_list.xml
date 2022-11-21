@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/itemListStoreName"
-        android:layout_width="0dp"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="left"
@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/itemListStoreTel"
-        android:layout_width="0dp"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="left"
